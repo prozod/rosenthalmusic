@@ -1,0 +1,30 @@
+@use '@styles/colors';
+@use '@styles/fonts';
+@use '@styles/sizes';
+
+.menu {
+  padding: sizes.$sm 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_textlogo {
+    font-family: fonts.$syne;
+    font-weight: 900;
+    font-size: fonts.$md;
+  }
+
+  &_anchorlinks {
+    display: flex;
+
+    &_link {
+      margin-right: sizes.$xl;
+      list-style: none;
+
+      &:hover {
+        color: colors.$accent;
+        cursor: pointer;
+      }
+    }
+  }
+}

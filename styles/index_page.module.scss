@@ -1,0 +1,24 @@
+@use '../styles/fonts';
+@use '../styles/sizes';
+@import 'mixins';
+
+.bodyWrapper {
+  transition: all 0.15s ease-in-out;
+  display: block;
+  width: sizes.$w-half;
+  margin: 0 auto;
+}
+
+@include tablet() {
+  .bodyWrapper {
+    transition: all 0.15s ease-in-out;
+    display: block;
+  }
+}
+
+@include mobile() {
+  .bodyWrapper {
+    transition: all 0.15s ease-in-out;
+    display: block;
+  }
+}
