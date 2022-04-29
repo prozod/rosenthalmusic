@@ -1,0 +1,37 @@
+@use '@styles/colors';
+@use '@styles/fonts';
+@use '@styles/sizes';
+
+.btn {
+  padding: sizes.$md sizes.$xl;
+  border: none;
+  font-weight: 600;
+  font-family: fonts.$manrope;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &_full {
+    background: colors.$accent;
+    border: 1px solid colors.$accent;
+    color: colors.$bg1;
+    position: relative;
+
+    &:hover {
+      background: transparent;
+      color: colors.$accent;
+      transform: translateY(-5px);
+    }
+  }
+
+  &_outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: colors.$bg1;
+      transform: translateY(-5px);
+    }
+  }
+}

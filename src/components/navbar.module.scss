@@ -1,9 +1,10 @@
-@use '@styles/colors';
-@use '@styles/fonts';
-@use '@styles/sizes';
+@use "@styles/colors";
+@use "@styles/fonts";
+@use "@styles/sizes";
+@import "@styles/mixins";
 
 .menu {
-  padding: sizes.$sm 0;
+  padding: sizes.$xl 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,11 +21,32 @@
     &_link {
       margin-right: sizes.$xl;
       list-style: none;
+      transition: all 0.15s ease-in-out;
+
+      &:nth-child(4) {
+        margin-right: 0;
+      }
 
       &:hover {
         color: colors.$accent;
         cursor: pointer;
       }
     }
+  }
+}
+
+.current {
+  color: colors.$accent;
+}
+
+@include mobile() {
+  .menu {
+    display: none;
+  }
+}
+
+@include tablet() {
+  .menu {
+    display: none;
   }
 }

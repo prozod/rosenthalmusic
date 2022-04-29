@@ -1,0 +1,39 @@
+@use '@styles/colors';
+@use '@styles/fonts';
+@use '@styles/sizes';
+
+.hero {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: sizes.$w-full;
+  margin-top: 3em;
+
+  &_left {
+    flex: 1;
+    z-index: 100;
+    // border: 1px solid lightsalmon;
+
+    &_text {
+      font-size: fonts.$heading;
+      font-weight: 800;
+      font-family: fonts.$syne;
+      color: colors.$accent;
+      z-index: 10000;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      width: 70%;
+    }
+
+    button {
+      margin-right: 1em;
+    }
+  }
+
+  &_right {
+    // border: 1px solid lightblue;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+  }
+}

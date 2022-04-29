@@ -1,0 +1,104 @@
+@use "../styles/fonts";
+@use "../styles/colors";
+@use "../styles/sizes";
+@import "mixins";
+
+.bodyWrapper {
+  transition: all 0.15s ease-in-out;
+  display: block;
+  width: sizes.$layout-md;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.sections_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  margin: 0 auto;
+}
+
+.sections_split {
+  display: flex;
+  justify-content: flex-start;
+  gap: sizes.$lg;
+  width: 100%;
+  font-family: fonts.$manrope;
+
+  .section_left {
+    display: flex;
+    flex-direction: column;
+
+    .digitalplatform_wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: sizes.$sm;
+
+      .digitalplatform_button {
+        flex: 1;
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        font-size: fonts.$sm;
+        padding: sizes.$sm;
+        font-family: fonts.$syne;
+        transition: all 0.15s ease;
+
+        &:hover {
+          border: 1px solid colors.$accent;
+          color: colors.$accent;
+          transform: scale(0.98);
+          cursor: pointer;
+        }
+
+        &:is(:last-child) {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+
+  .section_right {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: fonts.$xxl;
+      font-family: fonts.$syne;
+      font-weight: 500;
+      margin-bottom: sizes.$md;
+      border-bottom: 1px solid colors.$accent;
+      border-bottom-style: dotted;
+      border-bottom-width: 2.5px;
+    }
+
+    .release_info {
+      font-size: fonts.$sm;
+      font-weight: 800;
+      margin-top: sizes.$md;
+    }
+
+    .details_field {
+      line-height: sizes.$lg;
+      font-weight: 800;
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .sections_split {
+    flex-direction: column;
+  }
+}
+
+@include tablet() {
+  .sections_split {
+    flex-direction: column;
+    width: 80%;
+  }
+}
