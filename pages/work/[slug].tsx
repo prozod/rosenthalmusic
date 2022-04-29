@@ -1,18 +1,18 @@
 // components
-import Navbar from "@components/navbar.component";
+import Navbar from '@components/navbar.component';
 // native
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 // costum hooks
-import { useQuerySingleEntry } from "src/hooks/useQuerySingleEntry";
+import { useQuerySingleEntry } from 'src/hooks/useQuerySingleEntry';
 // styles
-import styles from "@styles/work_page_slug.module.scss";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect } from "react";
+import styles from '@styles/work_page_slug.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 function SongPage() {
   const route = useRouter();
-  const { data } = useQuerySingleEntry(route.asPath.split("/")[2]);
+  const { data } = useQuerySingleEntry(route.asPath.split('/')[2]);
 
   return (
     <div className={styles.bodyWrapper}>
@@ -95,6 +95,26 @@ function SongPage() {
                       const comparePos =
                         data.fields.songInfo?.production[
                           data.fields.songInfo.production.length - 1
+                        ];
+
+                      {
+                        return eng === comparePos ? (
+                          <span>&nbsp;{eng}</span>
+                        ) : (
+                          <span>&nbsp;{eng},</span>
+                        );
+                      }
+                    })}
+                  </p>
+                )}
+                {/* RECORDING */}
+                {data.fields.songInfo?.recording && (
+                  <p className={styles.details_field}>
+                    Recording:
+                    {data.fields.songInfo.recording.map((eng: string) => {
+                      const comparePos =
+                        data.fields.songInfo?.recording[
+                          data.fields.songInfo.recording.length - 1
                         ];
 
                       {

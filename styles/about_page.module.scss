@@ -1,0 +1,33 @@
+@use '../styles/fonts';
+@use '../styles/sizes';
+@import 'mixins';
+
+.bodyWrapper {
+  transition: all 0.15s ease-in-out;
+  display: block;
+  width: sizes.$layout-md;
+  margin: 0 auto;
+  height: 100vh;
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    margin: sizes.$lg 0;
+    font-size: fonts.$xs;
+    font-weight: 800;
+    font-family: fonts.$manrope;
+  }
+}
+
+@include tablet() {
+  .bodyWrapper {
+    width: sizes.$layout-lg;
+  }
+}
+
+@include mobile() {
+  .bodyWrapper {
+    width: sizes.$layout-full;
+  }
+}
