@@ -1,40 +1,64 @@
 @use '@styles/colors';
 @use '@styles/fonts';
 @use '@styles/sizes';
+@import '@styles/mixins';
 
 .hero {
   display: flex;
   justify-content: center;
   position: relative;
-  width: sizes.$w-full;
-  margin-top: 3em;
+
+  @include tablet() {
+    margin-top: sizes.$xl;
+  }
+
+  @include narrow-screen() {
+    flex-direction: column;
+  }
 
   &_left {
-    flex: 1;
-    z-index: 100;
     // border: 1px solid lightsalmon;
+    flex: 0.9;
+    font-family: fonts.$syne;
+
+    @include mobile() {
+      padding: 0 sizes.$lg;
+    }
+
+    &_title {
+      font-size: 4.5vw;
+      font-weight: 800;
+      color: colors.$accent;
+      transition: all 0.2s ease;
+
+      @include narrow-screen() {
+        font-size: fonts.$xl;
+      }
+    }
 
     &_text {
-      font-size: fonts.$heading;
-      font-weight: 800;
-      font-family: fonts.$syne;
-      color: colors.$accent;
-      z-index: 10000;
+      font-size: 2vw;
+      width: 100%;
       margin-top: 1em;
       margin-bottom: 1em;
-      width: 70%;
+      transition: all 0.2s ease;
+      @include narrow-screen() {
+        font-size: fonts.$md;
+      }
     }
-
-    button {
-      margin-right: 1em;
-    }
+  }
+  &_buttons {
+    display: flex;
+    gap: sizes.$xs;
+    flex-wrap: wrap;
   }
 
   &_right {
     // border: 1px solid lightblue;
-    display: block;
-    position: absolute;
-    margin: 0 auto;
-    right: 0;
+    flex: 1;
+
+    @include narrow-screen() {
+      margin-top: sizes.$lg;
+    }
   }
 }

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Button from '@components/button/button.component';
 import Image from 'next/image';
 import styles from './hero.module.scss';
+import { useQueryDataCollection } from '@hooks/useContentData';
 
 const heroItems = {
   initial: {
@@ -49,6 +50,10 @@ const imageMotion = {
 };
 
 const Hero = () => {
+  const { data } = useQueryDataCollection('about');
+
+  const imageAbout = `https:${data?.items[0]?.fields.picture.fields.file.url}`;
+
   return (
     <section className={styles.hero}>
       <motion.div
@@ -57,6 +62,9 @@ const Hero = () => {
         animate="animate"
         initial="initial"
       >
+        <motion.p className={styles.hero_left_title} variants={heroItem}>
+          Sander Rosenthal
+        </motion.p>
         <motion.p className={styles.hero_left_text} variants={heroItem}>
           Music producer, recording, mixing & mastering engineer
         </motion.p>
@@ -75,12 +83,19 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <Image
-          src={`/ag47_sander.webp`}
-          layout="intrinsic"
-          width={530}
-          height={700}
-        />
+        {data?.items[0] == undefined ? (
+          <p>Loading...</p>
+        ) : (
+          <div className={styles.image}>
+            <Image
+              src={imageAbout == undefined ? '/' : imageAbout}
+              layout="intrinsic"
+              loading="lazy"
+              width={850}
+              height={550}
+            />
+          </div>
+        )}
       </motion.div>
     </section>
   );

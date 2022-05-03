@@ -4,8 +4,7 @@
 
 .index {
   footer {
-    position: fixed;
-    bottom: 0;
+    text-align: center;
     right: 50%;
     margin: sizes.$lg 0;
     font-size: fonts.$xs;
@@ -14,8 +13,10 @@
   }
   .bodyWrapper {
     transition: all 0.15s ease-in-out;
-    display: block;
-    width: sizes.$layout-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: sizes.$layout-lg;
     margin: 0 auto;
     height: 100vh;
   }

@@ -8,7 +8,7 @@ import { useQueryDataCollection } from 'src/hooks/useContentData';
 import styles from '@styles/work_page.module.scss';
 
 function WorkPage() {
-  const { data } = useQueryDataCollection();
+  const { data } = useQueryDataCollection('work');
   console.log(data?.items);
 
   return (
