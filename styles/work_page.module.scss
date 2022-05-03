@@ -1,6 +1,6 @@
-@use "../styles/fonts";
-@use "../styles/sizes";
-@import "mixins";
+@use '../styles/fonts';
+@use '../styles/sizes';
+@import 'mixins';
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
@@ -8,6 +8,11 @@
   width: sizes.$layout-md;
   margin: 0 auto;
   height: 100vh;
+  font-family: fonts.$manrope;
+
+  h1 {
+    margin-bottom: sizes.$sm;
+  }
 }
 
 .cards {

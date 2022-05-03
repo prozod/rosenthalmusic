@@ -1,14 +1,14 @@
 //native
 import type { NextPage } from 'next';
 import Head from 'next/head';
-//
 //components
 import Navbar from '@components/navbar.component';
 import Hero from '@components/hero/hero.component';
-
 //styles
 import styles from '@styles/index_page.module.scss';
+//animation
 import { AnimatePresence } from 'framer-motion';
+//particles
 
 const Home: NextPage = () => {
   return (

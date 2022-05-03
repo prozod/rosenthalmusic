@@ -9,11 +9,12 @@ import styles from '@styles/work_page.module.scss';
 
 function WorkPage() {
   const { data } = useQueryDataCollection();
+  console.log(data?.items);
 
   return (
     <div className={styles.bodyWrapper}>
       <Navbar />
-      <h1>WORK</h1>
+      <h1>Discography</h1>
       <div className={styles.cards}>
         {data?.items.map((item) => {
           return (
