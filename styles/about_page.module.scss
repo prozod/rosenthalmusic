@@ -4,19 +4,90 @@
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
-  display: block;
-  width: sizes.$layout-md;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: sizes.$layout-lg;
   height: 100vh;
+  margin: 0 auto;
 
-  footer {
-    position: fixed;
-    bottom: 0;
-    right: 50%;
-    margin: sizes.$lg 0;
-    font-size: fonts.$xs;
+  @include mobile() {
+    footer {
+      padding: sizes.$md 0;
+    }
+  }
+}
+
+.content_wrapper {
+  @include mobile() {
+    padding: 0 sizes.$md;
+  }
+
+  &_topbar {
+    font-family: fonts.$syne;
     font-weight: 800;
-    font-family: fonts.$manrope;
+    font-size: fonts.$lg;
+    display: flex;
+    gap: sizes.$md;
+    justify-content: space-between;
+    align-items: center;
+    padding: sizes.$lg 0;
+
+    p {
+      font-size: fonts.$xl;
+      flex: 1;
+    }
+
+    span {
+      position: relative;
+      flex: 1;
+      @include mobile() {
+        display: none;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+      }
+    }
+  }
+
+  &_containers {
+    display: flex;
+    gap: sizes.$md;
+
+    @include tablet() {
+      flex-direction: column;
+    }
+
+    &_left {
+      flex: 1;
+    }
+    &_right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &_buttons {
+        display: flex;
+        gap: sizes.$sm;
+
+        @include tablet() {
+          margin-top: sizes.$md;
+        }
+
+        a {
+          padding: sizes.$sm;
+        }
+      }
+    }
   }
 }
 

@@ -13,10 +13,13 @@
     font-family: fonts.$syne;
     font-weight: 900;
     font-size: fonts.$md;
+    line-height: 5px;
   }
 
   &_anchorlinks {
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     &_link {
       margin-right: sizes.$xl;

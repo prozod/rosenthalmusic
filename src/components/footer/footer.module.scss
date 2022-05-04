@@ -1,0 +1,11 @@
+@use '@styles/sizes';
+@use '@styles/fonts';
+
+.footer {
+  text-align: center;
+  right: 50%;
+  margin: sizes.$lg 0;
+  font-size: fonts.$xs;
+  font-weight: 800;
+  font-family: fonts.$manrope;
+}

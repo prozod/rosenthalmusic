@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Button from '@components/button/button.component';
 import Image from 'next/image';
 import styles from './hero.module.scss';
 import { useQueryDataCollection } from '@hooks/useContentData';

@@ -11,15 +11,3 @@
   height: 100vh;
   margin: 0 auto;
 }
-
-@include tablet() {
-  .bodyWrapper {
-    width: sizes.$layout-lg;
-  }
-}
-
-@include mobile() {
-  .bodyWrapper {
-    width: sizes.$layout-full;
-  }
-}

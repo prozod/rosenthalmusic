@@ -1,19 +1,21 @@
 import styles from './button.module.scss';
 
-interface IButton {
+interface IButton extends Pick<HTMLAnchorElement, 'href' | 'target' | 'rel'> {
   text: string;
   outline?: boolean;
+  href: string;
 }
 
-const Button = ({ outline, text = 'Button' }: IButton) => {
+const Button = ({ href, outline, text = 'Button' }: IButton) => {
   return (
-    <button
+    <a
       className={
         styles.btn + ' ' + `${outline ? styles.btn_outline : styles.btn_full}`
       }
+      href={href}
     >
       {text}
-    </button>
+    </a>
   );
 };
 

@@ -4,14 +4,19 @@
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
-  display: block;
-  width: sizes.$layout-md;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: sizes.$layout-lg;
   height: 100vh;
-  font-family: fonts.$manrope;
+  margin: 0 auto;
 
   h1 {
     margin-bottom: sizes.$sm;
+  }
+
+  .contentWrapper {
+    flex: 1;
   }
 }
 
