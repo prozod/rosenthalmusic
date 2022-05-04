@@ -13,7 +13,7 @@ const About = () => {
 
       <section className={styles.bodyWrapper}>
         <Navbar />
-        <footer>Rosenthal Music OÜ © 2022</footer>
+        <footer>Rosenthal Music OÜ 2022</footer>
       </section>
     </>
   );

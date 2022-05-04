@@ -3,6 +3,7 @@ import Button from '@components/button/button.component';
 import Image from 'next/image';
 import styles from './hero.module.scss';
 import { useQueryDataCollection } from '@hooks/useContentData';
+import Link from 'next/link';
 
 const heroItems = {
   initial: {
@@ -70,10 +71,10 @@ const Hero = () => {
         </motion.p>
         <motion.div className={styles.hero_buttons}>
           <motion.span variants={heroItem}>
-            <Button text="See my work" />
+            <Link href="/work">See my work</Link>
           </motion.span>
           <motion.span variants={heroItem}>
-            <Button text="Who am I?" outline />
+            <Link href="/about">Who am I?</Link>
           </motion.span>
         </motion.div>
       </motion.div>

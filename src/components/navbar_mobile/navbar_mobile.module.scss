@@ -1,0 +1,61 @@
+@use '@styles/sizes';
+@use '@styles/colors';
+@use '@styles/fonts';
+@import '@styles/mixins';
+
+.menu {
+  display: none;
+}
+
+@include tablet() {
+  .menu {
+    // SHOW NAVBAR WITH LOGO AND HAMBURGER ICON
+    position: relative;
+    display: block;
+
+    &_logo_container {
+      display: flex;
+      justify-content: space-between;
+      padding: sizes.$lg 0;
+      @include mobile() {
+        padding: sizes.$lg sizes.$lg sizes.$lg sizes.$lg;
+      }
+
+      span {
+        margin: 0;
+        position: relative;
+        line-height: 5px;
+        top: -2.5px;
+      }
+    }
+
+    &_textlogo {
+      font-size: fonts.$md;
+      font-family: fonts.$syne;
+      font-weight: 900;
+    }
+    &_icon {
+      width: sizes.$lg;
+      height: sizes.$lg;
+    }
+
+    // DROPDOWN HIDDEN MENU CONTAINER
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      gap: sizes.$md;
+      background: colors.$accent;
+      color: colors.$bg1;
+      padding: sizes.$md 0;
+
+      li {
+        font-size: fonts.$md;
+      }
+    }
+  }
+}

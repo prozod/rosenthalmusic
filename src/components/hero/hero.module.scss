@@ -9,7 +9,7 @@
   position: relative;
 
   @include tablet() {
-    margin-top: sizes.$xl;
+    margin-top: sizes.$md;
   }
 
   @include narrow-screen() {
@@ -50,7 +50,57 @@
   &_buttons {
     display: flex;
     gap: sizes.$xs;
+    margin-top: sizes.$extra;
     flex-wrap: wrap;
+
+    @include narrow-screen() {
+      margin-top: sizes.$xxl;
+    }
+
+    @include mobile() {
+      gap: sizes.$xxl;
+    }
+
+    span:nth-child(1) > a {
+      padding: sizes.$md sizes.$xl;
+      border: none;
+      font-weight: 600;
+      font-family: fonts.$manrope;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      background: colors.$accent;
+      border: 1px solid colors.$accent;
+      color: colors.$bg1;
+      position: relative;
+      &:hover {
+        background: transparent;
+        color: colors.$accent;
+        transform: translateY(-5px);
+      }
+      @include mobile() {
+        padding: sizes.$sm sizes.$lg;
+      }
+    }
+    span:nth-child(2) > a {
+      padding: sizes.$md sizes.$xl;
+      border: none;
+      font-weight: 600;
+      font-family: fonts.$manrope;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+
+      &:hover {
+        background: white;
+        color: colors.$bg1;
+        transform: translateY(-5px);
+      }
+      @include mobile() {
+        padding: sizes.$sm sizes.$lg;
+      }
+    }
   }
 
   &_right {
@@ -58,7 +108,25 @@
     flex: 1;
 
     @include narrow-screen() {
-      margin-top: sizes.$lg;
+      margin-top: sizes.$xxl;
+    }
+
+    .image {
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 1px solid colors.$accent;
+        left: -(sizes.$xs);
+        bottom: -(sizes.$xs);
+
+        @include narrow-screen() {
+          display: none;
+        }
+      }
     }
   }
 }
