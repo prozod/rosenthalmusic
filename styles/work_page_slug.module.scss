@@ -1,22 +1,33 @@
-@use "../styles/fonts";
-@use "../styles/colors";
-@use "../styles/sizes";
-@import "mixins";
+@use '../styles/fonts';
+@use '../styles/colors';
+@use '../styles/sizes';
+@import 'mixins';
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
-  display: block;
-  width: sizes.$layout-md;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
+  width: sizes.$layout-lg;
+
+  @include mobile() {
+    width: sizes.$layout-full;
+  }
 }
 
 .sections_wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70%;
   margin: 0 auto;
+  width: 100%;
+
+  @include mobile() {
+    padding: 0 sizes.$md;
+    padding-bottom: sizes.$md;
+  }
 }
 
 .sections_split {
@@ -25,15 +36,18 @@
   gap: sizes.$lg;
   width: 100%;
   font-family: fonts.$manrope;
+  padding-top: sizes.$md;
 
   .section_left {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .digitalplatform_wrapper {
       display: flex;
       justify-content: space-between;
       margin-top: sizes.$sm;
+      width: 100%;
 
       .digitalplatform_button {
         flex: 1;
@@ -99,6 +113,6 @@
 @include tablet() {
   .sections_split {
     flex-direction: column;
-    width: 80%;
+    width: sizes.$layout-full;
   }
 }

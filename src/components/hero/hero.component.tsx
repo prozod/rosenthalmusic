@@ -35,14 +35,13 @@ const imageMotion = {
   initial: {
     opacity: 0,
     x: -100,
-    scale: 0.2,
-    height: 0,
+    scale: 0.9,
+    // height: 0,
   },
   animate: {
     opacity: 1,
     x: 0,
     scale: 1,
-    height: 'auto',
     transition: {
       duration: 0.25,
     },
@@ -89,6 +88,7 @@ const Hero = () => {
           <div className={styles.image}>
             <Image
               src={imageAbout == undefined ? '/' : imageAbout}
+              alt="sander rosenthal image at mixer"
               layout="intrinsic"
               loading="lazy"
               width={850}

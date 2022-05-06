@@ -17,6 +17,8 @@
       display: flex;
       justify-content: space-between;
       padding: sizes.$lg 0;
+      align-items: center;
+
       @include mobile() {
         padding: sizes.$lg sizes.$lg sizes.$lg sizes.$lg;
       }

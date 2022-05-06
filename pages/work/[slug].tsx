@@ -8,7 +8,9 @@ import { useQuerySingleEntry } from 'src/hooks/useQuerySingleEntry';
 import styles from '@styles/work_page_slug.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
+import Footer from '@components/footer/footer.component';
+import { motion } from 'framer-motion';
 
 function SongPage() {
   const route = useRouter();
@@ -16,18 +18,35 @@ function SongPage() {
 
   return (
     <div className={styles.bodyWrapper}>
+      <NavbarMobile/>
       <Navbar />
       <div className={styles.sections_wrapper}>
         {data !== undefined ? (
           <div className={styles.sections_split}>
-            <section className={styles.section_left}>
+            <motion.section className={styles.section_left}
+        initial={{opacity: 0, x: -50, scale: 0.98}}
+        animate={{opacity: 1, x: 0, scale: 1,
+        transition: {
+            duration: 0.25,
+            type: "tween"
+        }
+        }}
+            >
               <Image
                 src={`https:${data.fields.songCover?.fields.file.url}`}
                 layout="intrinsic"
                 width={400}
                 height={400}
               />
-              <div className={styles.digitalplatform_wrapper}>
+              <motion.div className={styles.digitalplatform_wrapper}
+
+        initial={{opacity: 0, x: 100 }}
+        animate={{opacity: 1, x: 0, 
+        transition: {
+            duration: 0.25,
+            type: "tween"
+        }}}
+              >
                 {data.fields.songPlatformSpotify && (
                   <Link href={data.fields.songPlatformSpotify}>
                     <button className={styles.digitalplatform_button}>
@@ -42,9 +61,16 @@ function SongPage() {
                     </button>
                   </Link>
                 )}
-              </div>
-            </section>
-            <section className={styles.section_right}>
+              </motion.div>
+            </motion.section>
+            <motion.section className={styles.section_right} 
+            initial={{opacity: 0, x: 50, scale: 0.98}}
+            animate={{opacity: 1, x: 0, scale: 1, transition: {
+            duration: 0.25,
+            type: "tween"
+          }
+          }}
+            >
               <div>
                 <h1>{data.fields.songTitle}</h1>
                 {/* MIXING */}
@@ -131,12 +157,13 @@ function SongPage() {
               <div className={styles.release_info}>
                 {data.fields.releaseInfo && <p>{data.fields.releaseInfo}</p>}
               </div>
-            </section>
+            </motion.section>
           </div>
         ) : (
           <div>Loading...</div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 }
