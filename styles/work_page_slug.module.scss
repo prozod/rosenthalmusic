@@ -23,6 +23,7 @@
   justify-content: center;
   margin: 0 auto;
   width: 100%;
+  overflow-x: hidden;
 
   @include mobile() {
     padding: 0 sizes.$md;
