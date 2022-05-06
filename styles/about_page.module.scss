@@ -19,6 +19,7 @@
 }
 
 .content_wrapper {
+  overflow: hidden;
   @include mobile() {
     padding: 0 sizes.$md;
   }

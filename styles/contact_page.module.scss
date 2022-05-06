@@ -17,6 +17,7 @@
   }
 
   .contact_container {
+    overflow: hidden;
     font-family: fonts.$manrope;
     display: flex;
     flex-direction: column;
