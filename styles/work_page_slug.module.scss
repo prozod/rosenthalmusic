@@ -85,6 +85,15 @@
       border-bottom: 1px solid colors.$accent;
       border-bottom-style: dotted;
       border-bottom-width: 2.5px;
+
+      @include tablet() {
+        font-size: fonts.$xl;
+        padding-bottom: sizes.$sm;
+      }
+
+      @include mobile() {
+        font-size: fonts.$lg;
+      }
     }
 
     .release_info {

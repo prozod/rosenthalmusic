@@ -3,10 +3,9 @@ import type { AppProps } from 'next/app';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const variants = {
-  hidden: { opacity: 0, scale: 0.98 },
+  hidden: { opacity: 0 },
   enter: {
     opacity: 1,
-    scale: 1,
     transition: {
       type: 'tween',
     },

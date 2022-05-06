@@ -1,4 +1,5 @@
 @use '../styles/fonts';
+@use '../styles/colors';
 @use '../styles/sizes';
 @import 'mixins';
 
@@ -10,4 +11,75 @@
   width: sizes.$layout-lg;
   height: 100vh;
   margin: 0 auto;
+
+  @include mobile() {
+    width: sizes.$layout-full;
+  }
+
+  .contact_container {
+    font-family: fonts.$manrope;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: sizes.$lg;
+
+    &_hero {
+      text-align: center;
+      font-family: fonts.$syne;
+    }
+
+    &_body {
+      text-align: center;
+      &_email {
+        display: flex;
+        align-items: center;
+        line-height: -5px;
+        justify-content: center;
+        font-weight: 800;
+        span {
+          color: colors.$accent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 400;
+
+          .atsymbol {
+            width: 20px;
+            margin-right: sizes.$xs - 0.5;
+          }
+        }
+      }
+
+      &_alt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: sizes.$xxl + 1;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: fonts.$xs + 0.1;
+
+        div {
+          display: flex;
+          font-size: fonts.$md;
+
+          a {
+            padding: sizes.$xs;
+            margin: 0 sizes.$xs;
+            font-weight: 600;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.5);
+
+            &:hover {
+              color: colors.$accent;
+              letter-spacing: 3px;
+              transform: scale(1.1) translateY(5%);
+              z-index: 10;
+            }
+          }
+        }
+      }
+    }
+  }
 }
