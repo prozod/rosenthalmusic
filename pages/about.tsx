@@ -7,7 +7,7 @@ import styles from '@styles/about_page.module.scss';
 import Footer from '@components/footer/footer.component';
 import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
 import Navbar from '@components/navbar.component';
-import { useQueryDataCollection } from '@hooks/useContentData';
+import { useQueryDataCollection } from '@hooks/useQueryData';
 import Button from '@components/button/button.component';
 import { motion } from 'framer-motion';
 

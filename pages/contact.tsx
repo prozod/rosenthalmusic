@@ -48,9 +48,9 @@ const ContactPage = () => {
               }}
             >
               <span>
-                <ChatAltIcon className={styles.atsymbol} /> Email: &nbsp;
+                <ChatAltIcon className={styles.atsymbol} />{' '}
+                <a href="mailto: rosenthalmusic@gmail.com">Email me</a>
               </span>
-              rosenthalmusic@gmail.com
             </motion.p>
             <motion.div
               className={styles.contact_container_body_alt}
@@ -67,8 +67,10 @@ const ContactPage = () => {
             >
               <p>or you can find me on... </p>
               <div>
-                <a href="https://instagram.com/rosenthal">Instagram</a>
-                <a href="https://instagram.com/rosenthal">LinkedIn</a>
+                <a href="https://www.instagram.com/rosenthal.sander">
+                  Instagram
+                </a>
+                <a href="https://linkedin.com">LinkedIn</a>
               </div>
             </motion.div>
           </div>

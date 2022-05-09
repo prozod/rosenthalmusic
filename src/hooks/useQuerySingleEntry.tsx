@@ -1,9 +1,7 @@
-import { IWorkFields } from "@utils/contentful_types";
-import { Entry, EntryCollection, EntryFields } from "contentful";
-import { useState, useEffect } from "react";
-import { client } from "src/utils/client";
-
-interface WorkEntries {}
+import { IWorkFields } from '@utils/contentful_types';
+import { Entry } from 'contentful';
+import { useState, useEffect } from 'react';
+import { client } from 'src/utils/client';
 
 export const useQuerySingleEntry = (entry_id: string) => {
   const [data, setData] = useState<Entry<IWorkFields>>();

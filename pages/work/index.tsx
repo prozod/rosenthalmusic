@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // costums
-import { useQueryDataCollection } from 'src/hooks/useContentData';
+import { useQueryDataCollection } from '@hooks/useQueryData';
 // styles
 import styles from '@styles/work_page.module.scss';
 //components
@@ -24,7 +24,7 @@ const container = {
 };
 
 function WorkPage() {
-  const { data } = useQueryDataCollection('work');
+  const { data } = useQueryDataCollection<'work'>('work');
 
   return (
     <>
@@ -42,7 +42,7 @@ function WorkPage() {
             initial="hidden"
             animate="show"
           >
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence>
               {data?.items.map((item) => {
                 return (
                   <Link

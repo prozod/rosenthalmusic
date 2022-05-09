@@ -39,11 +39,20 @@
         justify-content: center;
         font-weight: 800;
         span {
-          color: colors.$accent;
+          background: colors.$accent;
+          color: colors.$bg2;
           display: flex;
+          padding: sizes.$sm sizes.$lg;
+          border-radius: sizes.$xxs;
           align-items: center;
           justify-content: center;
-          font-weight: 400;
+          font-weight: 800;
+          transition: all 0.2s ease;
+
+          &:hover {
+            transform: scale(0.98);
+            cursor: pointer;
+          }
 
           .atsymbol {
             width: 20px;
@@ -56,7 +65,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: sizes.$xxl + 1;
+        margin-top: sizes.$sm + 1;
         color: rgba(255, 255, 255, 0.3);
         font-size: fonts.$xs + 0.1;
 
