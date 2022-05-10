@@ -11,12 +11,19 @@ import Link from 'next/link';
 import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
 import Footer from '@components/footer/footer.component';
 import { motion } from 'framer-motion';
+import SEO from '@components/SEO/seo.component';
 
 function SongPage() {
   const route = useRouter();
   const { data } = useQuerySingleEntry(route.asPath.split('/')[2]);
 
   return (
+    <>
+      <SEO
+        title={`${data?.fields.songTitle}`}
+        description={`More about ${data?.fields.songTitle}`}
+        image=""
+      />
     <div className={styles.bodyWrapper}>
       <NavbarMobile/>
       <Navbar />
@@ -165,6 +172,7 @@ function SongPage() {
       </div>
       <Footer/>
     </div>
+  </>
   );
 }
 

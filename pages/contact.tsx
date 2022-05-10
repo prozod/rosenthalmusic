@@ -1,19 +1,24 @@
+// native
 import React from 'react';
+// styles and motion
+import { ChatAltIcon } from '@heroicons/react/outline';
 import styles from '@styles/contact_page.module.scss';
+import { motion } from 'framer-motion';
+// components and hooks
 import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
 import Footer from '@components/footer/footer.component';
 import Navbar from '@components/navbar.component';
-import { ChatAltIcon } from '@heroicons/react/outline';
-import { motion } from 'framer-motion';
-import Head from 'next/head';
 import Button from '@components/button/button.component';
+import SEO from '@components/SEO/seo.component';
 
 const ContactPage = () => {
   return (
     <>
-      <Head>
-        <title>Rosenthal Music | Contact</title>
-      </Head>
+      <SEO
+        title="Contact"
+        description="Want to work together? Have any questions? Contact me."
+        image=""
+      />
       <div className={styles.bodyWrapper}>
         <Navbar />
         <NavbarMobile />

@@ -10,7 +10,7 @@ import Navbar from '@components/navbar.component';
 import Footer from '@components/footer/footer.component';
 import { AnimatePresence, motion } from 'framer-motion';
 import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
-import Head from 'next/head';
+import SEO from '@components/SEO/seo.component';
 
 const container = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -28,9 +28,11 @@ function WorkPage() {
 
   return (
     <>
-      <Head>
-        <title>Rosenthal Music | Discography</title>
-      </Head>
+      <SEO
+        title="Discography"
+        description="This is part of my work, some of the projects I had to opportunity to work on."
+        image=""
+      />
       <section className={styles.bodyWrapper}>
         <Navbar />
         <NavbarMobile />

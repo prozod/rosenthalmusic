@@ -1,5 +1,4 @@
 // native
-import Head from 'next/head';
 import Image from 'next/image';
 // styles + icons
 import styles from '@styles/about_page.module.scss';
@@ -10,6 +9,7 @@ import Navbar from '@components/navbar.component';
 import { useQueryDataCollection } from '@hooks/useQueryData';
 import Button from '@components/button/button.component';
 import { motion } from 'framer-motion';
+import SEO from '@components/SEO/seo.component';
 
 const About = () => {
   const { data } = useQueryDataCollection<'about'>('about');
@@ -17,9 +17,11 @@ const About = () => {
 
   return (
     <>
-      <Head>
-        <title>Rosenthal Music | About</title>
-      </Head>
+      <SEO
+        title="About"
+        description="More details about me, who am I and what I do."
+        image=""
+      />
 
       <section className={styles.bodyWrapper}>
         <Navbar />
