@@ -19,11 +19,13 @@ function SongPage() {
 
   return (
     <>
+    {data?.fields &&
       <SEO
         title={`${data?.fields.songTitle}`}
-        description={`More about ${data?.fields.songTitle}`}
-        image=""
-      />
+        description={`More information about ${data?.fields.songTitle}`}
+        image={`https:${data.fields.songCover?.fields.file.url}`}
+      /> 
+    }
     <div className={styles.bodyWrapper}>
       <NavbarMobile/>
       <Navbar />

@@ -9,6 +9,7 @@ interface ITypes {
 
 const SEO = (props: ITypes) => {
   const { title, description, image } = props;
+  console.log(props);
   return (
     <Head>
       <title>Rosenthal Music | {title}</title>

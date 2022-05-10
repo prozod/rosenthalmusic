@@ -8,14 +8,18 @@ import Footer from '@components/footer/footer.component';
 import SEO from '@components/SEO/seo.component';
 //styles + icons
 import styles from '@styles/index_page.module.scss';
+import { useQueryDataCollection } from '@hooks/useQueryData';
 
 const Home: NextPage = () => {
+  const { data } = useQueryDataCollection<'homepage'>('homepage');
+  const imageAbout = `https:${data?.items[0]?.fields.image.fields.file.url}`;
+
   return (
     <div className={styles.index}>
       <SEO
         title="Home"
         description="Music producer, mixing & mastering engineer based in Estonia."
-        image=""
+        image={imageAbout}
       />
 
       <section className={styles.bodyWrapper}>
