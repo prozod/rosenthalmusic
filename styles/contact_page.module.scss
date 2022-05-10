@@ -33,31 +33,9 @@
     &_body {
       text-align: center;
       &_email {
-        display: flex;
-        align-items: center;
-        line-height: -5px;
-        justify-content: center;
-        font-weight: 800;
-        span {
-          background: colors.$accent;
-          color: colors.$bg2;
-          display: flex;
-          padding: sizes.$sm sizes.$lg;
-          border-radius: sizes.$xxs;
-          align-items: center;
-          justify-content: center;
-          font-weight: 800;
-          transition: all 0.2s ease;
-
-          &:hover {
-            transform: scale(0.98);
-            cursor: pointer;
-          }
-
-          .atsymbol {
-            width: 20px;
-            margin-right: sizes.$xs - 0.5;
-          }
+        .atsymbol {
+          width: 20px;
+          margin-right: sizes.$xs - 0.5;
         }
       }
 

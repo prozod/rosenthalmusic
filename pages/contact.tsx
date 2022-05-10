@@ -6,6 +6,7 @@ import Navbar from '@components/navbar.component';
 import { ChatAltIcon } from '@heroicons/react/outline';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Button from '@components/button/button.component';
 
 const ContactPage = () => {
   return (
@@ -47,10 +48,13 @@ const ContactPage = () => {
                 },
               }}
             >
-              <span>
-                <ChatAltIcon className={styles.atsymbol} />{' '}
-                <a href="mailto: rosenthalmusic@gmail.com">Email me</a>
-              </span>
+              <Button
+                href="mailto: rosenthalmusic@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<ChatAltIcon className={styles.atsymbol} />}
+                text="Email me"
+              ></Button>
             </motion.p>
             <motion.div
               className={styles.contact_container_body_alt}

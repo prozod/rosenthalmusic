@@ -1,7 +1,7 @@
 // native
 import Head from 'next/head';
 import Image from 'next/image';
-// styles
+// styles + icons
 import styles from '@styles/about_page.module.scss';
 // components
 import Footer from '@components/footer/footer.component';
@@ -12,7 +12,7 @@ import Button from '@components/button/button.component';
 import { motion } from 'framer-motion';
 
 const About = () => {
-  const { data } = useQueryDataCollection('about');
+  const { data } = useQueryDataCollection<'about'>('about');
   const imageAbout = `https:${data?.items[0]?.fields.picture.fields.file.url}`;
 
   return (
@@ -75,8 +75,8 @@ const About = () => {
                     alt="sander rosenthal image"
                     layout="intrinsic"
                     loading="lazy"
-                    width={850}
-                    height={550}
+                    width={500}
+                    height={500}
                   />
                 </div>
               )}
@@ -94,9 +94,12 @@ const About = () => {
                 },
               }}
             >
-              <p>
-                {data?.items[0].fields.paragraph.content[0].content[0].value}
-              </p>
+              <div
+                className={styles.content_wrapper_containers_right_paragraphs}
+              >
+                <p>{data?.items[0].fields.description1}</p>
+                <p>{data?.items[0].fields.description2}</p>
+              </div>
               <motion.div
                 className={styles.content_wrapper_containers_right_buttons}
                 initial={{ opacity: 0, x: -150, scale: 0.98 }}

@@ -3,13 +3,18 @@
 @use '@styles/sizes';
 
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 5px;
   padding: sizes.$md sizes.$xl;
   border: none;
+  width: fit-content;
   font-weight: 600;
   font-family: fonts.$manrope;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
+  margin: 0 auto;
 
   &_full {
     background: colors.$accent;

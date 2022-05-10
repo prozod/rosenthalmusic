@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import styles from './hero.module.scss';
+// hooks and components
 import { useQueryDataCollection } from '@hooks/useQueryData';
+// native
 import Link from 'next/link';
+import Image from 'next/image';
+// styles + icons + motion
+import { motion } from 'framer-motion';
+import styles from './hero.module.scss';
 
 const heroItems = {
   initial: {
@@ -49,9 +52,9 @@ const imageMotion = {
 };
 
 const Hero = () => {
-  const { data } = useQueryDataCollection('about');
+  const { data } = useQueryDataCollection<'homepage'>('homepage');
 
-  const imageAbout = `https:${data?.items[0]?.fields.picture.fields.file.url}`;
+  const imageAbout = `https:${data?.items[0]?.fields.image.fields.file.url}`;
 
   return (
     <section className={styles.hero}>
@@ -62,10 +65,10 @@ const Hero = () => {
         initial="initial"
       >
         <motion.p className={styles.hero_left_title} variants={heroItem}>
-          Sander Rosenthal
+          {data?.items[0].fields.name}
         </motion.p>
         <motion.p className={styles.hero_left_text} variants={heroItem}>
-          Music producer, recording, mixing & mastering engineer
+          {data?.items[0].fields.phrase}
         </motion.p>
         <motion.div className={styles.hero_buttons}>
           <motion.span variants={heroItem}>

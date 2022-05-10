@@ -4,9 +4,10 @@ interface IButton extends Pick<HTMLAnchorElement, 'href' | 'target' | 'rel'> {
   text: string;
   outline?: boolean;
   href: string;
+  icon?: React.ReactNode;
 }
 
-const Button = ({ href, outline, text = 'Button' }: IButton) => {
+const Button = ({ icon, href, outline, text = 'Button' }: IButton) => {
   return (
     <a
       className={
@@ -14,6 +15,7 @@ const Button = ({ href, outline, text = 'Button' }: IButton) => {
       }
       href={href}
     >
+      <span>{icon}</span>
       {text}
     </a>
   );
