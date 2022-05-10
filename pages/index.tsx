@@ -16,11 +16,13 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.index}>
-      <SEO
-        title="Home"
-        description="Music producer, mixing & mastering engineer based in Estonia."
-        image={imageAbout}
-      />
+      {data !== undefined && (
+        <SEO
+          title="Home"
+          description="Music producer, mixing & mastering engineer based in Estonia."
+          image={imageAbout}
+        />
+      )}
 
       <section className={styles.bodyWrapper}>
         <Navbar />

@@ -19,7 +19,7 @@ function SongPage() {
 
   return (
     <>
-    {data?.fields &&
+    {data !== undefined &&
       <SEO
         title={`${data?.fields.songTitle}`}
         description={`More information about ${data?.fields.songTitle}`}
