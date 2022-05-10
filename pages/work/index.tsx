@@ -29,7 +29,7 @@ function WorkPage() {
   return (
     <>
       <SEO
-        title="Discography"
+        title="Rosenthal Music | Discography"
         description="This is part of my work, some of the projects I had to opportunity to work on."
         image=""
       />

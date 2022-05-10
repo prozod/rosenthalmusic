@@ -21,8 +21,8 @@ function SongPage() {
     <>
     {data !== undefined &&
       <SEO
-        title={`${data?.fields.songTitle}`}
-        description={`More information about ${data?.fields.songTitle}`}
+        title={`Rosenthal Music | ${data?.fields.songTitle && 'Discography'}`}
+        description={`More information about ${data?.fields.songTitle && 'my work'}`}
         image={`https:${data.fields.songCover?.fields.file.url}`}
       /> 
     }

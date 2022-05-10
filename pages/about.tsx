@@ -18,7 +18,7 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About"
+        title="Rosenthal Music | About"
         description="More details about me, who am I and what I do."
         image=""
       />

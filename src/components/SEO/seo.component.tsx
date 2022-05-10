@@ -12,12 +12,12 @@ const SEO = (props: ITypes) => {
 
   return (
     <Head>
-      <title>Rosenthal Music | {title}</title>
       <meta name="description" content={description} />
       <meta name="name" content="Sander Rosenthal" />
       <meta name="image" content={image} />
       <meta name="robots" content="index, nofollow" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{title}</title>
     </Head>
   );
 };

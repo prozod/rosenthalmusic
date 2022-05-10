@@ -17,17 +17,11 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.index}>
-      <Head>
-        <title>Rosenthal Music | Home</title>
-        <meta
-          name="description"
-          content="Music producer, mixing & mastering engineer from Estonia."
-        />
-        <meta name="name" content="Sander Rosenthal" />
-        <meta name="image" content="../public/roseicon.svg" />
-        <meta name="robots" content="index, nofollow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
+      <SEO
+        title="Rosenthal Music"
+        description="Music producer, mixing & mastering engineer based in Estonia."
+        image=""
+      />
       <section className={styles.bodyWrapper}>
         <Navbar />
         <NavbarMobile />

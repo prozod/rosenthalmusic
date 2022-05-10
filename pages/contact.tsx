@@ -15,7 +15,7 @@ const ContactPage = () => {
   return (
     <>
       <SEO
-        title="Contact"
+        title="Rosenthal Music | Contact"
         description="Want to work together? Have any questions? Contact me."
         image=""
       />
