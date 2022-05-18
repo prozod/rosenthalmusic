@@ -12,6 +12,7 @@ import NavbarMobile from "@components/navbar_mobile/navbar_mobile.component";
 import Footer from "@components/footer/footer.component";
 import { motion } from "framer-motion";
 import SEO from "@components/SEO/seo.component";
+import { ArrowLeftIcon, ChevronLeftIcon } from "@heroicons/react/outline";
 
 function SongPage() {
   const route = useRouter();
@@ -49,7 +50,7 @@ function SongPage() {
                   layout="intrinsic"
                   width={400}
                   height={400}
-                />
+                ></Image>
                 <motion.div
                   className={styles.digitalplatform_wrapper}
                   initial={{ opacity: 0, x: 100 }}
@@ -63,20 +64,30 @@ function SongPage() {
                   }}
                 >
                   {data.fields.songPlatformSpotify && (
-                    <Link href={data.fields.songPlatformSpotify}>
+                    <Link href={data.fields.songPlatformSpotify} passHref>
                       <button className={styles.digitalplatform_button}>
                         Spotify
                       </button>
                     </Link>
                   )}
                   {data.fields.songPlatformApple && (
-                    <Link href={data.fields.songPlatformApple}>
+                    <Link href={data.fields.songPlatformApple} passHref>
                       <button className={styles.digitalplatform_button}>
                         Apple Music
                       </button>
                     </Link>
                   )}
                 </motion.div>
+
+                <button
+                  className={styles.back_icon}
+                  onClick={() => route.push("/work")}
+                >
+                  <span>
+                    <ChevronLeftIcon />
+                    Go back
+                  </span>
+                </button>
               </motion.section>
               <motion.section
                 className={styles.section_right}

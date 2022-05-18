@@ -1,7 +1,7 @@
-@use '../styles/fonts';
-@use '../styles/colors';
-@use '../styles/sizes';
-@import 'mixins';
+@use "../styles/fonts";
+@use "../styles/colors";
+@use "../styles/sizes";
+@import "mixins";
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
@@ -29,6 +29,38 @@
     padding: 0 sizes.$md;
     padding-bottom: sizes.$md;
   }
+
+  .back_icon {
+    padding: sizes.$sm;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: sizes.$sm;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid white;
+
+    &:hover {
+      border: 1px solid white;
+      color: white;
+      transform: scale(0.98);
+      cursor: pointer;
+      background: transparent;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      font-size: fonts.$md;
+
+      svg {
+        width: 24px;
+        margin-right: sizes.$xs;
+      }
+    }
+  }
 }
 
 .sections_split {
@@ -40,6 +72,7 @@
   padding-top: sizes.$md;
 
   .section_left {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
