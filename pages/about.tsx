@@ -1,18 +1,18 @@
 // native
-import Image from 'next/image';
+import Image from "next/image";
 // styles + icons
-import styles from '@styles/about_page.module.scss';
+import styles from "@styles/about_page.module.scss";
 // components
-import Footer from '@components/footer/footer.component';
-import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
-import Navbar from '@components/navbar.component';
-import { useQueryDataCollection } from '@hooks/useQueryData';
-import Button from '@components/button/button.component';
-import { motion } from 'framer-motion';
-import SEO from '@components/SEO/seo.component';
+import Footer from "@components/footer/footer.component";
+import NavbarMobile from "@components/navbar_mobile/navbar_mobile.component";
+import Navbar from "@components/navbar.component";
+import { useQueryDataCollection } from "@hooks/useQueryData";
+import Button from "@components/button/button.component";
+import { motion } from "framer-motion";
+import SEO from "@components/SEO/seo.component";
 
 const About = () => {
-  const { data } = useQueryDataCollection<'about'>('about');
+  const { data } = useQueryDataCollection<"about">("about");
   const imageAbout = `https:${data?.items[0]?.fields.picture.fields.file.url}`;
 
   return (
@@ -34,7 +34,7 @@ const About = () => {
             scale: 1,
             transition: {
               duration: 0.25,
-              type: 'tween',
+              type: "tween",
             },
           }}
         >
@@ -47,7 +47,7 @@ const About = () => {
               scale: 1,
               transition: {
                 duration: 0.25,
-                type: 'tween',
+                type: "tween",
               },
             }}
           >
@@ -64,7 +64,7 @@ const About = () => {
                 scale: 1,
                 transition: {
                   duration: 0.25,
-                  type: 'tween',
+                  type: "tween",
                 },
               }}
             >
@@ -73,7 +73,7 @@ const About = () => {
               ) : (
                 <div className={styles.image}>
                   <Image
-                    src={imageAbout == undefined ? '/' : imageAbout}
+                    src={imageAbout == undefined ? "/" : imageAbout}
                     alt="sander rosenthal image"
                     layout="intrinsic"
                     loading="lazy"
@@ -92,7 +92,7 @@ const About = () => {
                 scale: 1,
                 transition: {
                   duration: 0.25,
-                  type: 'tween',
+                  type: "tween",
                 },
               }}
             >
@@ -101,6 +101,7 @@ const About = () => {
               >
                 <p>{data?.items[0].fields.description1}</p>
                 <p>{data?.items[0].fields.description2}</p>
+                <p>{data?.items[0].fields.description3}</p>
               </div>
               <motion.div
                 className={styles.content_wrapper_containers_right_buttons}
@@ -111,26 +112,26 @@ const About = () => {
                   scale: 1,
                   transition: {
                     duration: 0.25,
-                    type: 'tween',
+                    type: "tween",
                   },
                 }}
               >
                 <Button
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  href="https://www.linkedin.com/in/sander-rosenthal-3594a423b/"
                   target="_blank"
                   outline
                   rel="noopener noreferrer"
+                  text="LinkedIn"
+                />
+                <Button
+                  href="https://www.instagram.com/rosenthal.sander/"
+                  outline
+                  target="_blank"
                   text="Instagram"
-                />
-                <Button
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  outline
-                  target="_blank"
-                  text="Twitter"
                   rel="noopener noreferrer"
                 />
                 <Button
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  href="https://open.spotify.com/artist/3jR3AXo118TEdHlAWUNhwE?si=uDJOML9BQRakfeJt8YM7wA"
                   target="_blank"
                   rel="noopener noreferrer"
                   outline

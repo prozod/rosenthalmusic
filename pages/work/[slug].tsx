@@ -19,13 +19,11 @@ function SongPage() {
 
   return (
     <>
-    {data !== undefined &&
       <SEO
-        title={`Rosenthal Music | ${data?.fields.songTitle && 'Discography'}`}
-        description={`More information about ${data?.fields.songTitle && 'my work'}`}
-        image={`https:${data.fields.songCover?.fields.file.url}`}
+        title={`Rosenthal Music | ${data?.fields.songTitle}`}
+        description={`More information about ${data?.fields.songTitle}`}
+        image={`https:${data?.fields.songCover?.fields.file.url}`}
       /> 
-    }
     <div className={styles.bodyWrapper}>
       <NavbarMobile/>
       <Navbar />

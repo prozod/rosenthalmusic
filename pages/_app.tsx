@@ -1,13 +1,13 @@
-import '../styles/globals.scss';
-import type { AppProps } from 'next/app';
-import { AnimatePresence, motion } from 'framer-motion';
+import "../styles/globals.scss";
+import type { AppProps } from "next/app";
+import { AnimatePresence, motion } from "framer-motion";
 
 const variants = {
   hidden: { opacity: 0 },
   enter: {
     opacity: 1,
     transition: {
-      type: 'tween',
+      type: "tween",
     },
   },
   exit: { opacity: 0, scale: 0.98 },
@@ -28,8 +28,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         exit="exit"
         transition={{
           duration: 0.5,
-          ease: 'easeInOut',
-          type: 'tween',
+          ease: "easeInOut",
+          type: "tween",
         }}
       >
         <Component {...pageProps} />

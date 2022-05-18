@@ -1,6 +1,6 @@
-@use '../styles/fonts';
-@use '../styles/sizes';
-@import 'mixins';
+@use "../styles/fonts";
+@use "../styles/sizes";
+@import "mixins";
 
 .bodyWrapper {
   transition: all 0.15s ease-in-out;
@@ -13,9 +13,14 @@
 }
 
 .content_wrapper {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   margin: 0 auto;
   width: 80%;
+  transition: all 0.2 ease;
+
+  @include narrow-screen() {
+    width: 90%;
+  }
 
   @include tablet() {
     width: 100%;
@@ -49,7 +54,7 @@
 
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         z-index: 10;
         top: 0;
         bottom: 0;
@@ -82,7 +87,8 @@
 
       &_paragraphs {
         p {
-          margin: 0 0 sizes.$xs 0;
+          margin: 0 0 sizes.$sm 0;
+          font-weight: 400;
         }
       }
 

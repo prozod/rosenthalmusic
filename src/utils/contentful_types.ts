@@ -15,6 +15,9 @@ export interface IAboutFields {
 
   /** description2 */
   description2?: string | undefined;
+
+  /** description3 */
+  description3?: string | undefined;
 }
 
 /** About you */

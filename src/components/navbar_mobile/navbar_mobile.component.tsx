@@ -97,7 +97,7 @@ const NavbarMobile = () => {
         className={styles.menu_anchorlinks}
         ref={menuItemsRef}
       >
-        <Link href={navLinkItems.home}>
+        <Link href={navLinkItems.home} passHref>
           <motion.li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.home}
@@ -106,7 +106,7 @@ const NavbarMobile = () => {
             Home
           </motion.li>
         </Link>
-        <Link href={navLinkItems.about}>
+        <Link href={navLinkItems.about} passHref>
           <motion.li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.about}
@@ -115,7 +115,7 @@ const NavbarMobile = () => {
             About
           </motion.li>
         </Link>
-        <Link href={navLinkItems.work}>
+        <Link href={navLinkItems.work} passHref>
           <motion.li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.work}
@@ -124,7 +124,7 @@ const NavbarMobile = () => {
             Work
           </motion.li>
         </Link>
-        <Link href={navLinkItems.contact}>
+        <Link href={navLinkItems.contact} passHref>
           <motion.li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.contact}

@@ -1,18 +1,18 @@
-import { EntryCollection } from 'contentful';
+import { EntryCollection } from "contentful";
 import {
   CONTENT_TYPE,
   IAboutFields,
   IWorkFields,
   IHomepageFields,
-} from '@utils/contentful_types';
-import { useState, useEffect } from 'react';
-import { client } from 'src/utils/client';
+} from "@utils/contentful_types";
+import { useState, useEffect } from "react";
+import { client } from "src/utils/client";
 
-export type GetRequiredContentTypes<T> = T extends 'work'
+export type GetRequiredContentTypes<T> = T extends "work"
   ? EntryCollection<IWorkFields>
-  : T extends 'about'
+  : T extends "about"
   ? EntryCollection<IAboutFields>
-  : T extends 'homepage'
+  : T extends "homepage"
   ? EntryCollection<IHomepageFields>
   : never;
 

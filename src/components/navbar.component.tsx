@@ -1,27 +1,21 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
-import styles from "./navbar.module.scss";
-
-interface IEntry {
-  songCover: any;
-  songDetails: any;
-  songTitle: string;
-}
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
+import styles from './navbar.module.scss';
 
 const Navbar = () => {
-  const menuItemsRef = useRef<any>();
+  const menuItemsRef = useRef() as React.MutableRefObject<HTMLUListElement>;
   const router = useRouter();
 
   const navLinkItems = {
-    home: "/",
-    about: "/about",
-    work: "/work",
-    contact: "/contact",
+    home: '/',
+    about: '/about',
+    work: '/work',
+    contact: '/contact',
   };
 
   useEffect(() => {
-    const links = menuItemsRef.current.querySelectorAll("li");
+    const links = menuItemsRef.current.querySelectorAll('li');
     links.forEach((li: HTMLElement) => {
       if (router.pathname === li.dataset.item) {
         li.classList.add(styles.current);
@@ -35,7 +29,7 @@ const Navbar = () => {
     <div className={styles.menu}>
       <h1 className={styles.menu_textlogo}>ROSENTHAL</h1>
       <ul className={styles.menu_anchorlinks} ref={menuItemsRef}>
-        <Link href={navLinkItems.home}>
+        <Link href={navLinkItems.home} passHref>
           <li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.home}
@@ -43,7 +37,7 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        <Link href={navLinkItems.about}>
+        <Link href={navLinkItems.about} passHref>
           <li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.about}
@@ -51,7 +45,7 @@ const Navbar = () => {
             About
           </li>
         </Link>
-        <Link href={navLinkItems.work}>
+        <Link href={navLinkItems.work} passHref>
           <li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.work}
@@ -59,7 +53,7 @@ const Navbar = () => {
             Work
           </li>
         </Link>
-        <Link href={navLinkItems.contact}>
+        <Link href={navLinkItems.contact} passHref>
           <li
             className={styles.menu_anchorlinks_link}
             data-item={navLinkItems.contact}
