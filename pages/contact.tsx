@@ -1,15 +1,15 @@
 // native
-import React from 'react';
+import React from "react";
 // styles and motion
-import { ChatAltIcon } from '@heroicons/react/outline';
-import styles from '@styles/contact_page.module.scss';
-import { motion } from 'framer-motion';
+import { ChatAltIcon } from "@heroicons/react/outline";
+import styles from "@styles/contact_page.module.scss";
+import { motion } from "framer-motion";
 // components and hooks
-import NavbarMobile from '@components/navbar_mobile/navbar_mobile.component';
-import Footer from '@components/footer/footer.component';
-import Navbar from '@components/navbar.component';
-import Button from '@components/button/button.component';
-import SEO from '@components/SEO/seo.component';
+import NavbarMobile from "@components/navbar_mobile/navbar_mobile.component";
+import Footer from "@components/footer/footer.component";
+import Navbar from "@components/navbar.component";
+import Button from "@components/button/button.component";
+import SEO from "@components/SEO/seo.component";
 
 const ContactPage = () => {
   return (
@@ -32,7 +32,7 @@ const ContactPage = () => {
               scale: 1,
               transition: {
                 duration: 0.25,
-                type: 'tween',
+                type: "tween",
               },
             }}
           >
@@ -49,7 +49,7 @@ const ContactPage = () => {
                 scale: 1,
                 transition: {
                   duration: 0.25,
-                  type: 'tween',
+                  type: "tween",
                 },
               }}
             >
@@ -70,7 +70,7 @@ const ContactPage = () => {
                 scale: 1,
                 transition: {
                   duration: 0.25,
-                  type: 'tween',
+                  type: "tween",
                 },
               }}
             >
@@ -79,7 +79,9 @@ const ContactPage = () => {
                 <a href="https://www.instagram.com/rosenthal.sander">
                   Instagram
                 </a>
-                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/sander-rosenthal-3594a423b/">
+                  LinkedIn
+                </a>
               </div>
             </motion.div>
           </div>
